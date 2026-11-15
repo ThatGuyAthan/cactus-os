@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173b2b">
+  <meta name="description" content="A calm, practical care companion for your desk cactus.">
+  <title>Cactus OS — Plant Care</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Cactus OS home">
+        <span class="brand-mark">✳</span>
+        <span><strong>CACTUS OS</strong><small>YOUR PLANT CARE COMPANION</small></span>
+      </a>
+      <button class="icon-button" id="installBtn" hidden aria-label="Install app">＋ Install</button>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">PLANT PROFILE · UNIT 001</p>
+          <h1>Keep growing.</h1>
+          <p class="muted">A little attention. The right amount of water. No guesswork.</p>
+        </div>
+        <div class="plant-illustration" aria-hidden="true">
+          <div class="pot"><div class="soil"></div><div class="cactus-body"><i></i><b></b><em></em></div></div>
+          <span class="sun-dot">☼</span>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Plant summary">
+        <article class="stat-card"><span class="stat-label">POT SIZE</span><strong>95 mm</strong><small>Nursery pot</small></article>
+        <article class="stat-card"><span class="stat-label">HOME</span><strong>By a window</strong><small>Bright indoor light</small></article>
+        <article class="stat-card"><span class="stat-label">DRAINAGE</span><strong class="good">Confirmed</strong><small>Holes underneath</small></article>
+      </section>
+
+      <section class="panel next-panel">
+        <div class="section-heading"><div><p class="eyebrow">YOUR NEXT ACTION</p><h2 id="nextTitle">Check the soil</h2></div><span class="status-pill" id="nextPill">CARE CHECK</span></div>
+        <p id="nextDescription" class="muted">Check below the surface. Only water if the mix has dried sufficiently throughout.</p>
+        <div class="action-row">
+          <button class="button primary" id="soilCheckBtn">Log soil check</button>
+          <button class="button secondary" id="waterBtn">Log watering</button>
+        </div>
+        <p class="tiny-note">Reminder day does not automatically mean watering day.</p>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel">
+          <div class="section-heading"><div><p class="eyebrow">DAILY ROUTINE</p><h2>Quick checklist</h2></div><span class="counter" id="dailyCount">0/4</span></div>
+          <div class="progress-track"><div id="dailyProgress"></div></div>
+          <div class="check-list" id="dailyList">
+            <label><input type="checkbox" data-task="light"><span><strong>Light check</strong><small>Bright natural light; avoid sudden harsh sun.</small></span></label>
+            <label><input type="checkbox" data-task="soil"><span><strong>Soil check</strong><small>Feel below the surface; don't water on a schedule.</small></span></label>
+            <label><input type="checkbox" data-task="health"><span><strong>Health check</strong><small>Look for pests, softness or unusual colour.</small></span></label>
+            <label><input type="checkbox" data-task="drain"><span><strong>Drainage check</strong><small>Never leave the pot standing in water.</small></span></label>
+          </div>
+          <button class="text-button" id="resetDaily">Reset today's checklist</button>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading"><div><p class="eyebrow">WATERING HISTORY</p><h2>Water log</h2></div><span class="counter" id="waterCount">0 entries</span></div>
+          <div class="water-summary"><span class="drop-icon">◉</span><div><strong id="lastWater">No watering logged</strong><small id="waterAdvice">Check the soil before deciding.</small></div></div>
+          <div id="waterHistory" class="history-list"><p class="empty">Your watering history will appear here.</p></div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><div><p class="eyebrow">CARE SCHEDULE</p><h2>Fortnightly check-in</h2></div><span class="status-pill">EVERY 14 DAYS</span></div>
+        <p class="muted">A reminder to inspect your cactus, not an instruction to water it. Your next check is calculated from the date you last complete a check-in.</p>
+        <div class="reminder-box"><div><strong id="nextCheckDate">Not yet started</strong><small id="nextCheckText">Complete your first check-in to start the cycle.</small></div><button class="button secondary" id="completeCheck">Complete check-in</button></div>
+        <div class="reminder-settings">
+          <label for="reminderTime">Preferred reminder time</label>
+          <input type="time" id="reminderTime" value="18:00">
+          <button class="button secondary" id="notifyBtn">Enable notifications</button>
+        </div>
+        <p class="tiny-note" id="notificationStatus">In-app reminders appear when you open Cactus OS. Browser notifications depend on device and browser support.</p>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel">
+          <div class="section-heading"><div><p class="eyebrow">LIGHT & POSITION</p><h2>Window-side setup</h2></div><span class="sun-label">☼ BRIGHT</span></div>
+          <ul class="plain-list">
+            <li>Keep it in plenty of bright natural light.</li>
+            <li>Introduce direct sun gradually to avoid scorching.</li>
+            <li>Rotate the pot a little periodically for even growth.</li>
+            <li>Protect it from cold draughts and extreme conditions.</li>
+          </ul>
+        </section>
+        <section class="panel">
+          <div class="section-heading"><div><p class="eyebrow">PLANT HEALTH</p><h2>What to watch</h2></div></div>
+          <ul class="plain-list">
+            <li><strong>Soft or mushy areas:</strong> may indicate overwatering or rot.</li>
+            <li><strong>Shrivelling:</strong> check the soil before adding water.</li>
+            <li><strong>Discolouration or pests:</strong> photograph and investigate.</li>
+            <li><strong>Slow growth:</strong> can be normal, especially in cooler months.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><div><p class="eyebrow">GROWTH JOURNAL</p><h2>Notes & observations</h2></div></div>
+        <textarea id="journal" rows="4" placeholder="Record changes, new growth, soil condition, or anything unusual…"></textarea>
+        <div class="journal-actions"><span class="tiny-note" id="journalSaved">Saved on this device</span><button class="button secondary" id="saveNote">Save note</button></div>
+        <div id="journalHistory" class="journal-history"></div>
+      </section>
+
+      <section class="care-guide">
+        <p class="eyebrow">THE GOLDEN RULE</p>
+        <h2>Soil first. Calendar second.</h2>
+        <p>Water only when the potting mix has dried sufficiently throughout. When watering is due, water thoroughly and let all excess drain away. Never leave the pot sitting in water.</p>
+        <p class="tiny-note">Your plant's exact species is not yet confirmed. This plan uses cautious general cactus care and the instructions on its nursery tag. Adjust if a reliable species identification gives different requirements.</p>
+      </section>
+    </main>
+
+    <footer><span>CACTUS OS</span><span>Made for one very important cactus. 🌵</span></footer>
+  </div>
+
+  <dialog id="soilDialog">
+    <form method="dialog" class="dialog-card" id="soilForm">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">SOIL CHECK</p><h2>What did the soil feel like?</h2>
+      <label class="choice"><input type="radio" name="soilState" value="Dry" required><span><strong>Dry below the surface</strong><small>Check that the mix is dry throughout before watering.</small></span></label>
+      <label class="choice"><input type="radio" name="soilState" value="Slightly damp"><span><strong>Slightly damp</strong><small>Wait and check again later.</small></span></label>
+      <label class="choice"><input type="radio" name="soilState" value="Wet"><span><strong>Wet or clearly moist</strong><small>Do not water. Check drainage and allow it to dry.</small></span></label>
+      <button class="button primary full" value="save">Save soil check</button>
+    </form>
+  </dialog>
+
+  <dialog id="waterDialog">
+    <form method="dialog" class="dialog-card" id="waterForm">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">WATERING CONFIRMATION</p><h2>Before you log it…</h2>
+      <p class="muted">Have you confirmed the potting mix is dry sufficiently throughout, and can the pot drain freely?</p>
+      <label class="choice"><input type="checkbox" id="waterConfirm"><span><strong>Yes, both checks are confirmed.</strong><small>I'll water thoroughly and let excess water drain away.</small></span></label>
+      <button class="button primary full" id="confirmWater" type="button">Record watering</button>
+      <p class="tiny-note" id="waterError" role="alert"></p>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
